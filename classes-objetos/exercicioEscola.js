@@ -20,12 +20,12 @@ class Senai{
     }
     /*se status estiver True ele deve abrir a escola */
     abrirEscola(){
-        this.statusFuncionamento = True;
+        this.statusFuncionamento = true;
             console.log(`O SENAI: ${this.cidade} está ABERTO`);
         }
         /*mesma coisa mas com false */
     fecharEscola(){
-        this.statusFuncionamento = False;
+        this.statusFuncionamento = false;
             console.log(`O SENAI: ${this.cidade} está FECHADO`);
         }
 
@@ -42,9 +42,11 @@ class Senai{
 }
 
 const escola1 = new Senai(603, 'Araraquara', '1900', '20');
-escola1.dadosEscola();
+// escola1.dadosEscola();
 
-/*abrir escola */
+
+
+// /*abrir escola */
 escola1.abrirEscola();
 escola1.dadosEscola();
 
