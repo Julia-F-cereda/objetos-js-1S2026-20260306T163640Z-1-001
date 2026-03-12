@@ -9,32 +9,45 @@
 */
 
 class Senai{
-    constructor(codigo, cidade, construcao, cursos, statusFuncionamento){
+    constructor(codigo, cidade, construcao, cursos){
         this.codigo = codigo;
         this.cidade = cidade;
-        this.idade = new Date().getFullYear() - construcao;
         this.cursos = cursos;
-        this.statusFuncionamento = statusFuncionamento.fecharEscola();
+
+        /*atributos */
+        this.statusFuncionamento = false;
+        this.idade = new Date().getFullYear() - construcao;
     }
 
     abrirEscola(){
-        if (this.statusFuncionamento == True)
-            console.log(`STATUS ATUAL: ABERTA`);
+        this.statusFuncionamento = True;
+            console.log(`O SENAI: ${this.cidade} está ABERTO`);
         }
 
     fecharEscola(){
-        if (this.statusFuncionamento == False) 
-            console.log(`STATUS ATUAL: FECHADA`);
+        this.statusFuncionamento = False;
+            console.log(`O SENAI: ${this.cidade} está FECHADO`);
         }
 
-    dados(){
-        console.log(`/n===UNIDADE: ${this.cidade}===`);
-        console.log(`STATUS ATUAL: ${this.statusFuncionamento.fecharEscola()}`);
+    dadosEscola(){
+        /*IF TERNARIO */
+        const statusText = this.statusFuncionamento ? "ABERTO" : "FECHADO";
+        
+        console.log(`/===UNIDADE: ${this.cidade}===`);
+        console.log(`STATUS ATUAL: ${statusText}`);
         console.log(`IDADE: ${this.idade} | CURSOS: ${this.cursos}`);
         console.log(`=============================================`);
-        console.log(`[SISTEMA]: ${this.statusFuncionamento.abrirEscola()}`);
+        console.log(`[SISTEMA]: ${statusText}`);
     }
 }
 
-const escola1 = new Senai(603, 'Araraquara', '1900', '20','' );
+const escola1 = new Senai(603, 'Araraquara', '1900', '20');
+escola1.dadosEscola();
+
+/*abrir escola */
 escola1.abrirEscola();
+escola1.dadosEscola();
+
+/*fechar escola */
+escola1.fecharEscola();
+escola1.dadosEscola();
