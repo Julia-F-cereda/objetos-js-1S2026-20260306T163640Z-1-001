@@ -18,12 +18,12 @@ class Senai{
         this.statusFuncionamento = false;
         this.idade = new Date().getFullYear() - construcao;
     }
-
+    /*se status estiver True ele deve abrir a escola */
     abrirEscola(){
         this.statusFuncionamento = True;
             console.log(`O SENAI: ${this.cidade} está ABERTO`);
         }
-
+        /*mesma coisa mas com false */
     fecharEscola(){
         this.statusFuncionamento = False;
             console.log(`O SENAI: ${this.cidade} está FECHADO`);
